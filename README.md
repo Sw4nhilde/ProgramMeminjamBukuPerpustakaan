@@ -1,10 +1,44 @@
-# UAS-DASPRO-KEL-3
+# UAS-DASPRO
 
-Muhammad Ikhsan Hazamy
-1237050138
+```mermaid
+classDiagram
+    class Akun{
+        -nama : String
+        -email : String
+        -NIK : integer
+    }
 
-Muhammad Zaki Alghifari
-1237050132
+    class Buku{
+        -idBuku :String
+        -namaBuku : String
+        -genreBuku :
+        -isAvailable : boolean
+    }
 
-Muhammad Eka Mandiri Sujanto 
-1237050079
+    class DetailPeminjaman{
+        -idDetailPeminjaman : String
+        -Peminjaman :
+        -Buku :
+        -genreBuku :
+     
+    }
+
+    class Peminjam{
+        -idPeminjam : String
+    }
+
+class Peminjaman{
+        -idPeminjaman : String
+        -Peminjam :
+        -Tanggal :
+        -DetailPeminjamans : ArrayList
+
+}
+
+    Akun <|--|> Peminjam
+    Buku --|> Peminjaman
+    Peminjam --|> Buku
+    Peminjaman <|--|> Peminjam
+    Peminjaman --*  DetailPeminjaman
+    
+```
